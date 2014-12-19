@@ -1,0 +1,467 @@
+<!DOCTYPE HTML5>
+<HTML>
+
+<HEAD>
+	<TITLE>Quick HTML Guide</TITLE>
+	<meta name=viewport content="width=device-width, initial-scale=1.0">
+	<script src=http://code.jquery.com/jquery-1.11.0.min.js></script>
+	<script src=http://code.jquery.com/jquery-migrate-1.2.1.min.js></script>
+	<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css>
+	<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css>
+	<script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js></script>
+	<link rel="stylesheet" href="../styles/style3.3.css">
+	<link rel="stylesheet" href="../styles/style-store1.0.css">
+	<script>
+		$(document).ready(function () {
+			// Creates a new variable for the date
+			var d = new Date();
+			// Gets the month.
+			var month = d.getMonth();
+			// Changes colors based on the season            
+			if (month >= 10 || month < 1) {
+				var stylesheet = "winter";
+			} else if (month >= 1 && month < 4) {
+				var stylesheet = "spring";
+			} else if (month >= 4 && month < 7) {
+				var stylesheet = "summer";
+			} else if (month >= 7 && month < 10) {
+				var stylesheet = "fall";
+			}
+			$('head').append('<link rel="stylesheet" type="text/css" href="../styles/' + stylesheet + '.css">');
+		});
+	</script>
+	<style>
+		.tC {
+			color: #000 !important;
+		}
+		.header3 {
+			color: #000;
+		}
+		h4 {
+			color: #FFF;
+		}
+	</style>
+</HEAD>
+
+<BODY>
+	<!-- Navbar at the top of the screen. -->
+	<div class="navbar navbar-fixed-top">
+		<div class=container>
+			<a href=index.html class=navbar-brand><img src=../pics/logo.png style="width: 51%; margin-top: -9px;">
+			</a>
+			<button class=navbar-toggle data-toggle=collapse data-target=.navHeaderCollapse> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button>
+			<div class="collapse navbar-collapse navHeaderCollapse dropdown">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="../index.html">Home</a>
+                        <li><a href="http://sycamore-interns.forumotion.com/">Forum</a></li>
+						<li class="dropdown"> <a href=# class=dropdown-toggle data-toggle=dropdown>Quick Guides <b class=caret></b></a>
+							<ul class=dropdown-menu>
+								<li><a href=#>HTML</a>
+								</li>
+								<li><a href=jsGuide.html>JavaScript</a>
+								</li>
+								<li><a href=cssGuide.html>CSS</a>
+								</li>
+							</ul>
+						</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- Page content -->
+	<div class=container style="margin-top: 80px; margin-bottom: 10px;">
+		<h2>HTML Quick Guide</h2> </div>
+	<div class="container">
+		<table class="reference">
+			<tr>
+				<td colspan="3" class="reference-head">Required Tags</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Document Type</td>
+				<td>&lt;!DOCTYPE HTML&gt;</td>
+				<td width="250">First tag in a file. It tells the web browser what version of HTML a page is written in.</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">HTML Tag</td>
+				<td>&lt;html&gt;&lt;/html&gt;</td>
+				<td>Wraps all the code in the file, except for the doctype.</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Head Section</td>
+				<td>&lt;head&gt;&lt;/head&gt;</td>
+				<td>At the top of the file, after html tag</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Title</td>
+				<td>&lt;title&gt;&lt;/title&gt;</td>
+				<td>Goes inside the head tag</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Body Section</td>
+				<td>&lt;body&gt;&lt;/body&gt;</td>
+				<td>Goes after the head tag and wraps the page content.</td>
+			</tr>
+			<tr>
+				<td colspan="3" class="reference-head">Headings, Paragraphs & Text Formatting</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Heading</td>
+				<td>&lt;h1&gt;&lt;/h1&gt;</td>
+				<td>Wraps each heading.
+					<br> H1 thru H6
+					<br> H1 is the main topic.
+					<br> H2 is a subtopic, and so on.</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Paragraph</td>
+				<td>&lt;p&gt;&lt;/p&gt;</td>
+				<td>Wraps each paragraph</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Line Break</td>
+				<td>&lt;br&gt;</td>
+				<td>New line or carriage return</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Block Quote</td>
+				<td>&lt;blockquote&gt;&lt;/blockquote&gt;</td>
+				<td>Indents a block of text</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Subscript</td>
+				<td>&lt;sub&gt;&lt;/sub&gt;</td>
+				<td>H<sub>2</sub>O</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Superscript</td>
+				<td>&lt;sup&gt;&lt;/sup&gt;</td>
+				<td>E=mc<sup>2</sup>
+				</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Bold</td>
+				<td>&lt;strong&gt;&lt;/strong&gt; or &lt;b&gt;&lt;/b&gt;</td>
+				<td><b>This is bold</b>
+				</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Italic</td>
+				<td>&lt;em&gt;&lt;/em&gt; or &lt;i&gt;&lt;/i&gt;</td>
+				<td><i>This is italic</i>
+				</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Font Size</td>
+				<td>&lt;font size=&quot;5&quot;&gt;&lt;/font&gt;</td>
+				<td>1 to 7 (smallest to largest)</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Align Left</td>
+				<td>align=&quot;left&quot;</td>
+				<td rowspan=3> Alignment works with text, graphics, headings, tables, paragraphs. </td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Align Center</td>
+				<td>align=&quot;center&quot;</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Align Right</td>
+				<td>align=&quot;right&quot;</td>
+			</tr>
+			<tr>
+				<td colspan="3" class="reference-head">Graphics</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Display graphic</td>
+				<td>&lt;img src="img/filename.png"&gt;</td>
+				<td>Image formats: Use .gif .jpg or .png</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Dimensions</td>
+				<td>&lt;img src="img/filename.png" width=&quot;250&quot; height=&quot;100&quot;&gt;</td>
+				<td>Scale graphic (in pixels)</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Border</td>
+				<td>&lt;img src="img/filename.png" border=&quot;1&quot;&gt;</td>
+				<td>Make border 0 if linked and you still wish no border</td>
+			</tr>
+			<tr>
+				<td colspan="3" class="reference-head">Horizontal Rules</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Horizontal Rule</td>
+				<td>&lt;hr&gt;</td>
+				<td>Shaded rule across page</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">HR Thickness</td>
+				<td>&lt;hr size=&quot;2&quot;&gt;</td>
+				<td>Thickness of rule in pixels</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">HR Width</td>
+				<td>&lt;hr width=&quot;600&quot;&gt;</td>
+				<td>Width of rule in pixels</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">HR Width Percent</td>
+				<td>&lt;hr width="50%"&gt;</td>
+				<td>Percentage of page width</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Solid Line</td>
+				<td>&lt;hr noshade&gt;</td>
+				<td>Eliminates shading</td>
+			</tr>
+			<tr>
+				<td colspan="3" class="reference-head">Lists</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Unordered List</td>
+				<td>&lt;ul&gt;&nbsp;
+					<br> &lt;li&gt;This is a list item&lt;/li&gt;&nbsp;
+					<br> &lt;/ul&gt;</td>
+				<td>Put &lt;li&gt; around each list item</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Ordered List</td>
+				<td>&lt;ol&gt;&nbsp;
+					<br> &lt;li&gt;This is a list item&lt;/li&gt;&nbsp;
+					<br> &lt;/ol&gt;</td>
+				<td>Numbers the list items</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Definition List</td>
+				<td>&lt;dl&gt;
+					<br> &lt;dt&gt;Term&lt;/dt&gt;
+					<br> &lt;dd&gt;Definition&lt;/dd&gt;
+					<br> &lt;/dl&gt;</td>
+				<td>DT=Data Term, DD=Data Definition</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Bullet List</td>
+				<td>&lt;ul type=&quot;disc&quot;&gt;</td>
+				<td>Bullet in front of each entry in list</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Circle Bullets</td>
+				<td>&lt;ul type=&quot;circle&quot;&gt;</td>
+				<td>Circle in front of each entry in list</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Square Bullets</td>
+				<td>&lt;ul type=&quot;square&quot;&gt;</td>
+				<td>Square in front of each entry in list</td>
+			</tr>
+			<tr>
+				<td colspan="3" class="reference-head">Backgrounds & Color</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Tiled Background</td>
+				<td>&lt;body background="file.png"&gt;</td>
+				<td>Image formats: Use .gif .jpg or .png</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Background Color</td>
+				<td>&lt;body bgcolor="#333"&gt;</td>
+				<td rowspan="5">
+					<p>Color value can be a 3 or 6 digit hexadecimal value. </p>
+					<p>You can find the hexadecimal code for a color in many HTML editors (such as Dreamweaver) or graphics editors (such as Fireworks, Photoshop, Illustrator). <a class="tC" href="http://www.w3schools.com/tags/ref_colorpicker.asp" target="_blank">Here is a handy online color picker.</a>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Text Color</td>
+				<td>&lt;body text="#333"&gt;</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Link Color</td>
+				<td>&lt;body link="#333"&gt;</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Visited Link</td>
+				<td>&lt;body vlink="#333"&gt;</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Active Link</td>
+				<td>&lt;body alink="333"&gt;</td>
+			</tr>
+			<tr>
+				<td colspan="3" class="reference-head">Links</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Link to another page</td>
+				<td>&lt;a href="filename.html"&gt;&lt;/a&gt;</td>
+				<td>Link to another page within a site</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Link to another site</td>
+				<td>&lt;a href="http://google.com"&gt;
+					<br> Google
+					<br> &lt;/a&gt;</td>
+				<td>Requires the full http:// address</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Link to target in page</td>
+				<td>&lt;a href="#name"&gt;&lt;/a&gt;</td>
+				<td>Links to specific location in current page</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Link to target in other page</td>
+				<td>&lt;a href="filename.html#name"&gt;
+					<br> Click Me
+					<br> &lt;/a&gt;</td>
+				<td>Links to specific location in another page </td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Define target in a page</td>
+				<td>&lt;a name="name"&gt;&lt;/a&gt;</td>
+				<td>To be able to link to a specific part of a page, add this tag to the place you want a link to end up at.</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Use graphic as link</td>
+				<td>&lt;a href="filename.html"&gt;
+					<br> &lt;img src="name.png"&gt;
+					<br> &lt;/a&gt;</td>
+				<td>Wrap a link around an image tag (or anything for that matter) to make it linkable.</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Alternate text</td>
+				<td>&lt;img src="img/filename.png" alt="Image Description Here"&gt;</td>
+				<td>Choose text that would be useful if read aloud to someone that can't see the image</td>
+			</tr>
+			<tr>
+				<td colspan="3" class="reference-head">Special Characters</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Non-Breaking Space</td>
+				<td>&amp;nbsp; or &amp;#160;</td>
+				<td rowspan="5"><a class="tC" href="../html-special-characters/">Click here for a complete Special Characters chart</a>.</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&lt;</td>
+				<td>&amp;lt; or &amp;#60;</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&gt;</td>
+				<td>&amp;gt; or &amp;#62;</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&amp;</td>
+				<td>&amp;amp; or &amp;#38;</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&eacute;</td>
+				<td>&amp;eacute; or &amp;#233;</td>
+			</tr>
+			<tr>
+				<td colspan="3" class="reference-head">Tables</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Create a Table</td>
+				<td>&lt;table&gt;&lt;/table&gt;</td>
+				<td>Wraps a table</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Table Caption</td>
+				<td>&lt;caption&gt;&lt;/caption&gt;</td>
+				<td>Insert after table tag. One per table.</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Table Header</td>
+				<td>&lt;th&gt;&lt;/th&gt;</td>
+				<td>Contains header content/information</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Table Row</td>
+				<td>&lt;tr&gt;&lt;/tr&gt;</td>
+				<td>New Table Row</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Table Cell</td>
+				<td>&lt;td&gt;&lt;/td&gt;</td>
+				<td>Contains the content or data (table data)</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Columns to Span</td>
+				<td>&lt;td colspan=&quot;3&quot;&gt;</td>
+				<td>For data to stretch across columns</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Rows to Span</td>
+				<td>&lt;td rowspan=&quot;2&quot;&gt;</td>
+				<td>For data to go deeper than one column</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Width as Pixels</td>
+				<td>&lt;table width=&quot;600&quot;&gt;</td>
+				<td>In pixels</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Width as Percent</td>
+				<td>&lt;table width="50%"&gt;</td>
+				<td>Percentage </td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Table Border</td>
+				<td>&lt;table border=&quot;10&quot;&gt;</td>
+				<td>In pixels</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Cell Padding</td>
+				<td>&lt;table cellpadding=&quot;20&quot;&gt;
+					<td>In pixels</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Cell Spacing</td>
+				<td>&lt;table cellspacing=&quot;5&quot;&gt;</td>
+				<td>In pixels</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Cell Width</td>
+				<td>&lt;td width=&quot;200&quot;&gt;</td>
+				<td>In pixels</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Row Horiz. Alignment</td>
+				<td>&lt;tr align=&quot;center&quot;&gt;</td>
+				<td>Can use: left, center or right</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Row Vert. Alignment</td>
+				<td>&lt;tr valign=&quot;top&quot;&gt;</td>
+				<td>Can use: top, middle or bottom</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Cell Horiz. Alignment</td>
+				<td>&lt;td align=&quot;center&quot;&gt;</td>
+				<td>Can use: left, center or right</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">Cell Vert. Alignment</td>
+				<td>&lt;td valign=&quot;top&quot;&gt;</td>
+				<td>Can use: top, middle or bottom</td>
+			</tr>
+		</table>
+	</div>
+	<div>
+		<br>
+		<br>
+		<br> </div>
+	<!-- Bar at the bottom of the page -->
+	<div class="container">
+		<div class="nav navbar navbar-fixed-bottom">
+			<div class="navbar-brand">
+				<h4>Got any ideas?</h4> </div>
+			<div class="navbar-brand">
+				<h4>Send them to us!</h4> </div>
+			<div class="navbar-brand text-center "> <a class="btn btn-info">Go!</a> </div>
+			<div class="navbar-brand">
+				<h4>Or...make it yourself.</h4>
+			</div>
+		</div>
+	</div>
+</BODY>
+
+</HTML>

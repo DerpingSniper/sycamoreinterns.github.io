@@ -1,0 +1,855 @@
+<!DOCTYPE HTML5>
+<HTML>
+
+<HEAD>
+	<TITLE>Quick CSS Guide</TITLE>
+	<meta name=viewport content="width=device-width, initial-scale=1.0">
+	<script src=http://code.jquery.com/jquery-1.11.0.min.js></script>
+	<script src=http://code.jquery.com/jquery-migrate-1.2.1.min.js></script>
+	<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css>
+	<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css>
+	<script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js></script>
+	<link rel="stylesheet" href="../styles/style3.3.css">
+	<link rel="stylesheet" href="../styles/style-store1.0.css">
+	<script>
+		$(document).ready(function () {
+			// Creates a new variable for the date
+			var d = new Date();
+			// Gets the month.
+			var month = d.getMonth();
+			// Changes colors based on the season            
+			if (month >= 10 || month < 1) {
+				var stylesheet = "winter";
+			} else if (month >= 1 && month < 4) {
+				var stylesheet = "spring";
+			} else if (month >= 4 && month < 7) {
+				var stylesheet = "summer";
+			} else if (month >= 7 && month < 10) {
+				var stylesheet = "fall";
+			}
+			$('head').append('<link rel="stylesheet" type="text/css" href="../styles/' + stylesheet + '.css">');
+		});
+	</script>
+	<style>
+		.tC {
+			color: #000 !important;
+		}
+		.header3 {
+			color: #000;
+		}
+		h4 {
+			color: #FFF;
+		}
+	</style>
+</HEAD>
+
+<BODY>
+	<!-- Navbar at the top of the screen. -->
+	<div class="navbar navbar-fixed-top">
+		<div class=container>
+			<a href=index.html class=navbar-brand><img src=../pics/logo.png style="width: 51%; margin-top: -9px;"> </a>
+			<button class=navbar-toggle data-toggle=collapse data-target=.navHeaderCollapse> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button>
+			<div class="collapse navbar-collapse navHeaderCollapse dropdown">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="../index.html">Home</a>
+						<li class="dropdown"> <a href=# class=dropdown-toggle data-toggle=dropdown>Quick Guides <b class=caret></b></a>
+							<ul class=dropdown-menu>
+								<li><a href=htmlGuide.html>HTML</a> </li>
+								<li><a href=jsGuide.html>JavaScript</a> </li>
+								<li><a href=#>CSS</a> </li>
+							</ul>
+						</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- Page content -->
+	<div class="container text-center" style="margin-top: 100px;">
+		<h1>Quick CSS Guide</h1>
+	</div>
+	<div class="container">
+		<p>CSS &#8211; Cascading Style Sheets, the hidden heroes of the world wide web. These unsung heroes take a plain page of text and turn it into visually stimulating, aesthetically pleasing works of textual art. But what exactly is CSS and how do you use it? </p>
+		<p>You needn't head off to Amazon or your local bookstore to drop $50 on a massive tome that will give you back problems. There's a very structured logic behind CSS and you can learn some of the basics in just a matter of minutes. While the scope of this guide will not give you magical powers over the layouts of your pages and allow you to make the most intricate and complex pages available today, it will certainly get you on your way.</p>
+		<p>The cascading part of the CSS is one of the most important. It means that instead of editing each and every page on your website manually to give them flair and style, you simply point them all to the style sheet and have them incorporate the styles. It has been one of the most important additions to HTML over recent years.</p>
+		<p><b>CSS Structure</b>
+		</p>
+		<p>First let's look at a very quick CSS section to get a feel for the structure of CSS and to see how it looks and what it means:</p>
+		<p><span style='font-size:12.0pt;font-family:"Times New Roman"'>p
+  &#123;<br>
+  text-align: center;<br>
+  color: black;<br>
+  font-family: arial;<br>
+&#125;</span> </p>
+		<p>CSS is made of 3 pieces a <b>selector</b>, in the example p for paragraph, the logical grouping on the HTML page. The second piece is <b>property</b> in the example text-align, color and font-family are all properties of the selector. The final piece is the <b>value</b> which is center, black and arial in the example. The standard format is <i>Selector &#123;property:value;&#125;</i> Each property must be paired with a value and closed with a semi colon. Each group of properties must be enclosed in curly brackets and the selector must be placed directly before the properties.</p>
+		<p>Every element on a web page can generally be styled in some way, whether it's where it shows up on the page, what color the text or the background is or what size. Here is a list of the most common and useful CSS elements that generally show up in every page of text:</p>
+		<br>
+        <h3>Basic Concepts</h3>
+		<table border=1 cellpadding=5 cellspacing=0 bordercolor="#CCCCCC">
+			<tr>
+				<td width=57 valign=top>
+					<p><b>Property</b>
+					</p>
+				</td>
+				<td width=441 valign=bottom>
+					<p><b>Description</b>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=57>
+					<p>Grouping</p>
+				</td>
+				<td width=441>
+					<p>Multiple selectors separated by commas. Allows for assignment of properties to elements (selectors). H1, H2, H3, H5 &#123; color: blue;&#125;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=57>
+					<p>Contextual selectors</p>
+				</td>
+				<td width=441>
+					<p>One or more selectors H1 B &#123;text-decoration: underline;&#125; Bold Header 1 will be underlined as well.</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=57>
+					<p>Class
+						<br> (tag attribute)</p>
+				</td>
+				<td width=441>
+					<p>A class selector is a name preceded by a period. Do not use the period when referencing the class. Called by using the class= attribute. Do not begin a class name with a number</p>
+					<p class=PreformattedText><b><span style='font-size:12.0pt;font-family:"Times New Roman"'>.CSSguide</span></b><span style='font-size:12.0pt;font-family:"Times New Roman"'> &#123;color: blue;&#125; &lt;P <b>class=&quot;CSSguide&quot;</b>&gt;This is blue.&lt;/P&gt;</span>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=57>
+					<p>ID
+						<br> (tag attribute)</p>
+				</td>
+				<td width=441>
+					<p>An ID selector is preceded by a hash mark (#), and is called using the ID= attribute. The hash mark does not appear in the value of ID. Works like the class selector except that the ID can be used only once in the document.</p>
+					<p class=PreformattedText><b><span style='font-size:12.0pt;font-family:"Times New Roman"'>#Once</span></b><span style='font-size:12.0pt;font-family:"Times New Roman"'> &#123;color: red;&#125; &lt;P <b>ID=&quot;Once&quot;</b>&gt;This can only be used once.&lt;/P&gt;</span>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=57>
+					<p>Comments</p>
+				</td>
+				<td width=441>
+					<p>Anything between /* and */ will be a comment and have no effect on the page. Used to document changes etc. /* This is a comment. */</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=57>
+					<p>DIV and SPAN tags</p>
+				</td>
+				<td width=441>
+					<p>A Div is a block where the content within can all be styled at once</p>
+					<p class=PreformattedText><span style='font-size:12.0pt;font-family:"Times New Roman"'>&lt;DIV style=&quot;color:blue;&quot;&gt;&lt;H1&gt;<b><span style='color:#2323DC'>Hello</span>
+						</b>&lt;/H1&gt;&lt;/DIV&gt;</span>
+					</p>
+					<p>SPAN is used for inline formatting inside of another styled element like a paragraph</p>
+					<p class=PreformattedText><span style='font-size:12.0pt;font-family:"Times New Roman"'>&lt;P&gt;This is &lt;SPAN class=&quot;CSSGuide&quot;&gt;<span style='color:#2323DC'>blue</span>&lt;/SPAN&gt; in a regular paragraph&lt;/P&gt;</span>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=57>
+					<p>Shorthand </p>
+				</td>
+				<td width=441>
+					<p>Many properties can accept a shorthand list of values. Values are read from the top clockwise.</p>
+					<p class=PreformattedText><span style='font-size:12.0pt;font-family:"Times New Roman"'>Example:</span>
+					</p>
+					<p class=PreformattedText><span style='font-size:12.0pt;font-family:"Times New Roman"'>DIV &#123; padding: 5px 10px 5px 10px &#125;</span>
+					</p>
+					<p class=PreformattedText><span style='font-size:12.0pt;font-family:"Times New Roman"'>is the same as:</span>
+					</p>
+					<p class=PreformattedText><span style='font-size:12.0pt;font-family:"Times New Roman"'>DIV &#123; padding-top:5px; padding-right:10px; </span>
+					</p>
+					<p class=PreformattedText><span style='font-size:12.0pt;font-family:"Times New Roman"'> padding-bottom:5px; padding-left:10px &#125;</span>
+					</p>
+				</td>
+			</tr>
+		</table>
+		<br>
+        <h3>Background Properties</h3>
+		<table border=1 cellpadding=5 cellspacing=0 bordercolor="#CCCCCC">
+			<tr>
+				<td width=143>
+					<p align=left class=TableHeading style='text-align:left;layout-grid-mode: char'><strong>Property</strong>
+					</p>
+				</td>
+				<td width=357>
+					<p align=left class=TableHeading style='text-align:left;layout-grid-mode: char'><strong>Description</strong>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=143 valign=top>
+					<p style='layout-grid-mode:char'>background</p>
+				</td>
+				<td width=357 valign=top>
+					<p style='layout-grid-mode:char'>Sets any background properties in one selector. </p>
+				</td>
+			</tr>
+			<tr>
+				<td width=143 valign=top>
+					<p style='layout-grid-mode:char'>background-attachment</p>
+				</td>
+				<td width=357 valign=top>
+					<p style='layout-grid-mode:char'>Sets whether a background image is stationary or scrolls with the page.</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=143 valign=top>
+					<p style='layout-grid-mode:char'>background-color</p>
+				</td>
+				<td width=357 valign=top>
+					<p style='layout-grid-mode:char'>Sets the background color of a selector. Accepts HTML color names and Hex Color code i.e. #ffffff</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=143 valign=top>
+					<p style='layout-grid-mode:char'>background-image</p>
+				</td>
+				<td width=357 valign=top>
+					<p style='layout-grid-mode:char'>Sets the background image for a selector</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=143 valign=top>
+					<p style='layout-grid-mode:char'>background-position</p>
+				</td>
+				<td width=357 valign=top>
+					<p style='layout-grid-mode:char'>Sets the starting position of a background image in pixels</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=143 valign=top>
+					<p style='layout-grid-mode:char'>background-repeat</p>
+				</td>
+				<td width=357 valign=top>
+					<p style='layout-grid-mode:char'>Sets if a background image will repeat horizontally, vertically or not at all.</p>
+				</td>
+			</tr>
+		</table>
+		<br>
+        <h3>Border and Outline Properties</h3>
+		<table border=1 cellpadding=5 cellspacing=0 bordercolor="#CCCCCC">
+			<tr>
+				<td width=141>
+                    <p class=TableHeading align=left style='text-align:left;layout-grid-mode: char'><b>Property</b></p>
+				</td>
+				<td width=358>
+					<p class=TableHeading align=left style='text-align:left;layout-grid-mode: char'><b>Description</b></p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p style='layout-grid-mode:char'>border</p>
+				</td>
+				<td width=358 valign=top>
+					<p style='layout-grid-mode:char'>Sets all the border values in one property declaration</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p style='layout-grid-mode:char'>border-bottom</p>
+				</td>
+				<td width=358 valign=top>
+					<p style='layout-grid-mode:char'>Sets all the bottom border values in one property declaration</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p style='layout-grid-mode:char'>border-bottom-color</p>
+				</td>
+				<td width=358 valign=top>
+					<p style='layout-grid-mode:char'>Sets the color of the bottom border</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p style='layout-grid-mode:char'>border-bottom-style</p>
+				</td>
+				<td width=358 valign=top>
+					<p style='layout-grid-mode:char'>Sets the style of the bottom border</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p style='layout-grid-mode:char'>border-bottom-width</p>
+				</td>
+				<td width=358 valign=top>
+					<p style='layout-grid-mode:char'>Sets the width of the bottom border</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p style='layout-grid-mode:char'>border-color</p>
+				</td>
+				<td width=358 valign=top>
+					<p style='layout-grid-mode:char'>Sets the color of the four borders</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p style='layout-grid-mode:char'>border-left</p>
+				</td>
+				<td width=358 valign=top>
+					<p style='layout-grid-mode:char'>Sets all the left border values in one property declaration</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p style='layout-grid-mode:char'>border-left-color</p>
+				</td>
+				<td width=358 valign=top>
+					<p style='layout-grid-mode:char'>Sets the color of the left border</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p style='layout-grid-mode:char'>border-left-style</p>
+				</td>
+				<td width=358 valign=top>
+					<p style='layout-grid-mode:char'>Sets the style of the left border</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p style='layout-grid-mode:char'>border-left-width</p>
+				</td>
+				<td width=358 valign=top>
+					<p style='layout-grid-mode:char'>Sets the width of the left border</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p style='layout-grid-mode:char'>border-right</p>
+				</td>
+				<td width=358 valign=top>
+					<p style='layout-grid-mode:char'>Sets all the right border properties in one property declaration</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p style='layout-grid-mode:char'>border-right-color</p>
+				</td>
+				<td width=358 valign=top>
+					<p style='layout-grid-mode:char'>Sets the color of the right border</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p style='layout-grid-mode:char'>border-right-style</p>
+				</td>
+				<td width=358 valign=top>
+					<p style='layout-grid-mode:char'>Sets the style of the right border</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p style='layout-grid-mode:char'>border-right-width</p>
+				</td>
+				<td width=358 valign=top>
+					<p style='layout-grid-mode:char'>Sets the width of the right border</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p style='layout-grid-mode:char'>border-style</p>
+				</td>
+				<td width=358 valign=top>
+					<p style='layout-grid-mode:char'>Sets the style of the four borders</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p style='layout-grid-mode:char'>border-top</p>
+				</td>
+				<td width=358 valign=top>
+					<p style='layout-grid-mode:char'>Sets all the top border properties in one property declaration</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p style='layout-grid-mode:char'>border-top-color</p>
+				</td>
+				<td width=358 valign=top>
+					<p style='layout-grid-mode:char'>Sets the color of the top border</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p style='layout-grid-mode:char'>border-top-style</p>
+				</td>
+				<td width=358 valign=top>
+					<p style='layout-grid-mode:char'>Sets the style of the top border</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p style='layout-grid-mode:char'>border-top-width</p>
+				</td>
+				<td width=358 valign=top>
+					<p style='layout-grid-mode:char'>Sets the width of the top border</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p style='layout-grid-mode:char'>border-width</p>
+				</td>
+				<td width=358 valign=top>
+					<p style='layout-grid-mode:char'>Sets the width of the four borders</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p style='layout-grid-mode:char'>outline </p>
+				</td>
+				<td width=358 valign=top>
+					<p style='layout-grid-mode:char'>Sets all the outline properties in one property declaration</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p style='layout-grid-mode:char'>outline-color </p>
+				</td>
+				<td width=358 valign=top>
+					<p style='layout-grid-mode:char'>Sets the color of an outline</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p style='layout-grid-mode:char'>outline-style </p>
+				</td>
+				<td width=358 valign=top>
+					<p style='layout-grid-mode:char'>Sets the style of an outline</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p style='layout-grid-mode:char'>outline-width </p>
+				</td>
+				<td width=358 valign=top>
+					<p style='layout-grid-mode:char'>Sets the width of an outline</p>
+				</td>
+			</tr>
+		</table>
+        <br>
+        <h3>Font Properties</h3>
+		<table border=1 cellpadding=5 cellspacing=0 bordercolor="#CCCCCC">
+			<tr>
+				<td width=77>
+					<p style='layout-grid-mode:char'><b>Property</b>
+					</p>
+				</td>
+				<td width=423>
+					<p style='layout-grid-mode:char'><b>Description</b>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=77>
+					<p style='layout-grid-mode:char'>font-family</p>
+				</td>
+				<td width=423>
+					<p style='layout-grid-mode:char'>Property to choose specific fonts from generic families: serif, sans-serif, monospace, cursive and fantasy. <b>Selector</b> &#123;font-family: &quot;Courier New”, serif;&#125; Can be applied to any text Selector.</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=77>
+					<p style='layout-grid-mode:char'>font-style</p>
+				</td>
+				<td width=423>
+					<p style='layout-grid-mode:char'>Selects between italic and <b>normal. Selector</b> &#123;font-style: italic;&#125;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=77>
+					<p style='layout-grid-mode:char'>font-variant</p>
+				</td>
+				<td width=423>
+					<p style='layout-grid-mode:char'>Choice of two values: small-caps and normal. Allows for special formatting, will probably expand eventually beyond just 2 choices. <b>Selector</b> &#123;font-variant: small-caps;&#125;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=77>
+					<p style='layout-grid-mode:char'>font-weight</p>
+				</td>
+				<td width=423>
+					<p style='layout-grid-mode:char'>Values are: bold, normal, lighter, bolder and numeric values 100-900. <b>Selector</b> &#123;font-weight: 700;&#125;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=77>
+					<p style='layout-grid-mode:char'>font-size</p>
+				</td>
+				<td width=423>
+					<p style='layout-grid-mode:char'>Sets the absolute size (pt, in, cm, px), relative size (em, ex), or percentage of normal size.
+						<br> Can be size: xx-large, x-large, large, medium, small, x-small, xx-small, larger, smaller or numeric value. <b>Selector</b> &#123;font-size: 200%;&#125; <b>Selector</b> &#123;font-size: 36pt;&#125; <b>Selector </b>&#123;font-size: x-large;&#125;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=77>
+					<p style='layout-grid-mode:char'>font</p>
+				</td>
+				<td width=423>
+					<p style='layout-grid-mode:char'>Sets all font values in one property declaration. Best order of values is
+						<br> font &#123;font-style font-variant font-weight font-size/line-height font-family;&#125;. Not all are necessary <b>Selector</b> &#123;font: bold 16pt “Times New Roman”;&#125;</p>
+				</td>
+			</tr>
+		</table>
+        <br>
+        <h3>Dimention Properties</h3>
+		<table border=1 cellpadding=5 cellspacing=0 bordercolor="#CCCCCC">
+			<tr>
+				<td width=141>
+					<p align=left class=TableHeading style='text-align:left'><strong>Property</strong>
+					</p>
+				</td>
+				<td width=357>
+					<p align=left class=TableHeading style='text-align:left'><strong>Description</strong>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>height</p>
+				</td>
+				<td width=357 valign=top>
+					<p>Sets the height of a selector</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>max-height</p>
+				</td>
+				<td width=357 valign=top>
+					<p>Sets the maximum height of a selector</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>max-width</p>
+				</td>
+				<td width=357 valign=top>
+					<p>Sets the maximum width of a selector</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>min-height</p>
+				</td>
+				<td width=357 valign=top>
+					<p>Sets the minimum height of a selector</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>min-width</p>
+				</td>
+				<td width=357 valign=top>
+					<p>Sets the minimum width of a selector</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>width</p>
+				</td>
+				<td width=357 valign=top>
+					<p>Sets the width of a selector</p>
+				</td>
+			</tr>
+		</table>
+        <br>
+        <h3>List Properties</h3>
+		<table border=1 cellpadding=5 cellspacing=0 bordercolor="#CCCCCC">
+			<tr>
+				<td width=141>
+					<p align=left class=TableHeading style='text-align:left'><strong>Property</strong>
+					</p>
+				</td>
+				<td width=357>
+					<p align=left class=TableHeading style='text-align:left'><strong>Description</strong>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>list-style</p>
+				</td>
+				<td width=357 valign=top>
+					<p>Sets all the properties for a list in one property declaration</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>list-style-image</p>
+				</td>
+				<td width=357 valign=top>
+					<p>Specifies an image as the list-item marker</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>list-style-position</p>
+				</td>
+				<td width=357 valign=top>
+					<p>Specifies where to place the list-item marker</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>list-style-type</p>
+				</td>
+				<td width=357 valign=top>
+					<p>Specifies the type of list-item marker</p>
+				</td>
+			</tr>
+		</table>
+        <br>
+        <h3>Margin Properties</h3>
+		<table border=1 cellpadding=5 cellspacing=0 bordercolor="#CCCCCC">
+			<tr>
+				<td width=141>
+					<p align=left class=TableHeading style='text-align:left'><strong>Property</strong>
+					</p>
+				</td>
+				<td width=357>
+					<p align=left class=TableHeading style='text-align:left'><strong>Description</strong>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>margin </p>
+				</td>
+				<td width=357 valign=top>
+					<p>Sets all the margin properties in one property declaration</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>margin-bottom</p>
+				</td>
+				<td width=357 valign=top>
+					<p>Sets the bottom margin of a selector</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>margin-left</p>
+				</td>
+				<td width=357 valign=top>
+					<p>Sets the left margin of a selector</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>margin-right</p>
+				</td>
+				<td width=357 valign=top>
+					<p>Sets the right margin of a selector</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>margin-top</p>
+				</td>
+				<td width=357 valign=top>
+					<p>Sets the top margin of a selector</p>
+				</td>
+			</tr>
+		</table>
+        <br>
+        <h3>Padding Properties</h3>
+		<table border=1 cellpadding=5 cellspacing=0 bordercolor="#CCCCCC">
+			<tr>
+				<td width=141>
+					<p align=left class=TableHeading style='text-align:left'><strong>Property</strong>
+					</p>
+				</td>
+				<td width=357>
+					<p align=left class=TableHeading style='text-align:left'><strong>Description</strong>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>padding</p>
+				</td>
+				<td width=357 valign=top>
+					<p>Sets all the padding properties in one property declaration</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>padding-bottom</p>
+				</td>
+				<td width=357 valign=top>
+					<p>Sets the bottom padding of a selector</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>padding-left</p>
+				</td>
+				<td width=357 valign=top>
+					<p>Sets the left padding of a selector</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>padding-right</p>
+				</td>
+				<td width=357 valign=top>
+					<p>Sets the right padding of a selector</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>padding-top</p>
+				</td>
+				<td width=357 valign=top>
+					<p>Sets the top padding of a selector</p>
+				</td>
+			</tr>
+		</table>
+        <br>
+        <h3>Positioning Properties</h3>
+		<table border=1 cellpadding=5 cellspacing=0 bordercolor="#CCCCCC">
+			<tr>
+				<td width=141>
+					<p align=left class=TableHeading style='text-align:left'><strong>Property</strong>
+					</p>
+				</td>
+				<td width=357>
+					<p align=left class=TableHeading style='text-align:left'><strong>Description</strong>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>bottom</p>
+				</td>
+				<td width=357 valign=top>
+					<p>Sets the bottom margin edge for a positioned selector</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>clear</p>
+				</td>
+				<td width=357 valign=top>
+					<p>Whether a selector allows floating elements on the sides or not.</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>cursor</p>
+				</td>
+				<td width=357 valign=top>
+					<p>Specifies the type of cursor to be displayed i.e. crosshair, help, wait</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>display</p>
+				</td>
+				<td width=357 valign=top>
+					<p>Specifies the type of box a selector should generate</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>float</p>
+				</td>
+				<td width=357 valign=top>
+					<p>Specifies whether or not a box should float</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>left</p>
+				</td>
+				<td width=357 valign=top>
+					<p>Sets the left margin edge for a positioned box</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>overflow</p>
+				</td>
+				<td width=357 valign=top>
+					<p>Specifies what happens if content overflows a selector's box</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>position</p>
+				</td>
+				<td width=357 valign=top>
+					<p>Specifies the type of positioning for a selector</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>right</p>
+				</td>
+				<td width=357 valign=top>
+					<p>Sets the right margin edge for a positioned box</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>top</p>
+				</td>
+				<td width=357 valign=top>
+					<p>Sets the top margin edge for a positioned box</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>visibility</p>
+				</td>
+				<td width=357 valign=top>
+					<p>Specifies whether or not a selector is visible</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=141 valign=top>
+					<p>z-index</p>
+				</td>
+				<td width=357 valign=top>
+					<p>Sets the stack order of a selector like layers above or below others.</p>
+				</td>
+			</tr>
+		</table>
+    </div>
+        <div class="container">
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        
+		<!-- Bar at the bottom of the page -->
+		<div class="container">
+			<div class="nav navbar navbar-fixed-bottom">
+				<div class="navbar-brand">
+					<h4>Got any ideas?</h4> </div>
+				<div class="navbar-brand">
+					<h4>Send them to us!</h4> </div>
+				<div class="navbar-brand text-center "> <a class="btn btn-info">Go!</a> </div>
+				<div class="navbar-brand">
+					<h4>Or...make it yourself.</h4> </div>
+			</div>
+		</div>
+</BODY>
+
+</HTML>

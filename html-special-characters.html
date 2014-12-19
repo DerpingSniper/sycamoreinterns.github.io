@@ -1,0 +1,748 @@
+<!DOCTYPE HTML5>
+<HTML>
+
+<HEAD>
+	<TITLE>Special Characters</TITLE>
+	<meta name=viewport content="width=device-width, initial-scale=1.0">
+	<script src=http://code.jquery.com/jquery-1.11.0.min.js></script>
+	<script src=http://code.jquery.com/jquery-migrate-1.2.1.min.js></script>
+	<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css>
+	<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css>
+	<script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js></script>
+	<link rel="stylesheet" href="styles/style3.3.css">
+	<link rel="stylesheet" href="styles/style-store1.0.css">
+	<script>
+		$(document).ready(function () {
+			// Creates a new variable for the date
+			var d = new Date();
+			// Gets the month.
+			var month = d.getMonth();
+			// Changes colors based on the season            
+			if (month >= 10 || month < 1) {
+				var stylesheet = "winter";
+			} else if (month >= 1 && month < 4) {
+				var stylesheet = "spring";
+			} else if (month >= 4 && month < 7) {
+				var stylesheet = "summer";
+			} else if (month >= 7 && month < 10) {
+				var stylesheet = "fall";
+			}
+			$('head').append('<link rel="stylesheet" type="text/css" href="styles/' + stylesheet + '.css">');
+		});
+	</script>
+	<style>
+		.header3 {
+			color: #000;
+		}
+		h4 {
+			color: #FFF;
+		}
+	</style>
+</HEAD>
+
+<BODY>
+	<!-- Navbar at the top of the screen. -->
+	<div class="navbar navbar-fixed-top">
+		<div class=container>
+			<a href=index.html class=navbar-brand><img src=pics/logo.png style="width: 51%; margin-top: -9px;">
+			</a>
+			<button class=navbar-toggle data-toggle=collapse data-target=.navHeaderCollapse> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button>
+			<div class="collapse navbar-collapse navHeaderCollapse dropdown">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="index.html">Home</a>
+                        <li><a href="http://sycamore-interns.forumotion.com/">Forum</a></li>
+						<li class="dropdown"> <a href=# class=dropdown-toggle data-toggle=dropdown>Quick Guides <b class=caret></b></a>
+							<ul class=dropdown-menu>
+								<li><a href=guides/htmlGuide.html>HTML</a>
+								</li>
+								<li><a href=guides/jsGuide.html>JavaScript</a>
+								</li>
+								<li><a href=guides/cssGuide.html>CSS</a>
+								</li>
+							</ul>
+						</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- Page content -->
+	<div class=container style="margin-top: 80px; margin-bottom: 10px;">
+		<h2>HTML Special Characters</h2> </div>
+	<div class="container">
+		<table class="reference specialCharacters">
+			<tr>
+				<td class="reference-head">Character</td>
+				<td class="reference-head">Numeric Code</td>
+				<td class="reference-head">Name Code</td>
+				<td class="reference-head">Description</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#38;</td>
+				<td>&amp;#38;</td>
+				<td>&amp;amp;</td>
+				<td>Ampersand</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#60;</td>
+				<td>&amp;#60;</td>
+				<td>&amp;lt;</td>
+				<td>Less than</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#62;</td>
+				<td>&amp;#62;</td>
+				<td>&amp;gt;</td>
+				<td>Greater than</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#160;</td>
+				<td>&amp;#160;</td>
+				<td>&amp;nbsp;</td>
+				<td>Non-breaking Space</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#161;</td>
+				<td>&amp;#161;</td>
+				<td>&amp;iexcl;</td>
+				<td>Inverted exclamation</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#162;</td>
+				<td>&amp;#162;</td>
+				<td>&amp;cent;</td>
+				<td>Cent sign</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#163;</td>
+				<td>&amp;#163;</td>
+				<td>&amp;pound;</td>
+				<td>Pound sterling</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#164;</td>
+				<td>&amp;#164;</td>
+				<td>&amp;curren;</td>
+				<td>General currency sign</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#165;</td>
+				<td>&amp;#165;</td>
+				<td>&amp;yen;</td>
+				<td>Yen sign</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#166;</td>
+				<td>&amp;#166;</td>
+				<td>&amp;brvbar;</td>
+				<td>Broken vertical bar</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#167;</td>
+				<td>&amp;#167;</td>
+				<td>&amp;sect;</td>
+				<td>Section sign</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#168;</td>
+				<td>&amp;#168;</td>
+				<td>&amp;uml;</td>
+				<td>Umlaut (dieresis)</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#169;</td>
+				<td>&amp;#169;</td>
+				<td>&amp;copy;</td>
+				<td>Copyright</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#170;</td>
+				<td>&amp;#170;</td>
+				<td>&amp;ordf;</td>
+				<td>Feminine ordinal</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#171;</td>
+				<td>&amp;#171;</td>
+				<td>&amp;laquo;</td>
+				<td>Left angle quote, guillemotleft</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#172;</td>
+				<td>&amp;#172;</td>
+				<td>&amp;not;</td>
+				<td>Not sign</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#173;</td>
+				<td>&amp;#173;</td>
+				<td>&amp;shy;</td>
+				<td>Soft hyphen</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#174;</td>
+				<td>&amp;#174;</td>
+				<td>&amp;reg;</td>
+				<td>Registered trademark</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#175;</td>
+				<td>&amp;#175;</td>
+				<td>&amp;macr;</td>
+				<td>Macron accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#176;</td>
+				<td>&amp;#176;</td>
+				<td>&amp;deg;</td>
+				<td>Degree sign</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#177;</td>
+				<td>&amp;#177;</td>
+				<td>&amp;plusmn;</td>
+				<td>Plus or minus</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#178;</td>
+				<td>&amp;#178;</td>
+				<td>&amp;sup2;</td>
+				<td>Superscript two</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#179;</td>
+				<td>&amp;#179;</td>
+				<td>&amp;sup3;</td>
+				<td>Superscript three</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#180;</td>
+				<td>&amp;#180;</td>
+				<td>&amp;acute;</td>
+				<td>Acute accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#181;</td>
+				<td>&amp;#181;</td>
+				<td>&amp;micro;</td>
+				<td>Micro sign</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#182;</td>
+				<td>&amp;#182;</td>
+				<td>&amp;para;</td>
+				<td>Paragraph sign</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#183;</td>
+				<td>&amp;#183;</td>
+				<td>&amp;middot;</td>
+				<td>Middle dot</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#184;</td>
+				<td>&amp;#184;</td>
+				<td>&amp;cedil;</td>
+				<td>Cedilla</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#185;</td>
+				<td>&amp;#185;</td>
+				<td>&amp;sup1;</td>
+				<td>Superscript one</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#186;</td>
+				<td>&amp;#186;</td>
+				<td>&amp;ordm;</td>
+				<td>Masculine ordinal</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#187;</td>
+				<td>&amp;#187;</td>
+				<td>&amp;raquo;</td>
+				<td>Right angle quote, guillemotright</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#188;</td>
+				<td>&amp;#188;</td>
+				<td>&amp;frac14;</td>
+				<td>Fraction one-fourth</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#189;</td>
+				<td>&amp;#189;</td>
+				<td>&amp;frac12;</td>
+				<td>Fraction one-half</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#190;</td>
+				<td>&amp;#190;</td>
+				<td>&amp;frac34;</td>
+				<td>Fraction three-fourths</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#191;</td>
+				<td>&amp;#191;</td>
+				<td>&amp;iquest;</td>
+				<td>Inverted question mark</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#192;</td>
+				<td>&amp;#192;</td>
+				<td>&amp;Agrave;</td>
+				<td>Capital A, grave accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#193;</td>
+				<td>&amp;#193;</td>
+				<td>&amp;Aacute</td>
+				<td>Capital A, acute accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#194;</td>
+				<td>&amp;#194;</td>
+				<td>&amp;Acirc;</td>
+				<td>Capital A, circumflex accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#195;</td>
+				<td>&amp;#195;</td>
+				<td>&amp;Atilde;</td>
+				<td>Capital A, tilde</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#196;</td>
+				<td>&amp;#196;</td>
+				<td>&amp;Auml;</td>
+				<td>Capital A, dieresis or umlaut mark</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#197;</td>
+				<td>&amp;#197;</td>
+				<td>&amp;Aring;</td>
+				<td>Capital A, ring</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#198;</td>
+				<td>&amp;#198;</td>
+				<td>&amp;AElig;</td>
+				<td>Capital AE dipthong (ligature)</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#199;</td>
+				<td>&amp;#199;</td>
+				<td>&amp;Ccedil;</td>
+				<td>Capital C, cedilla</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#200;</td>
+				<td>&amp;#200;</td>
+				<td>&amp;Egrave;</td>
+				<td>Capital E, grave accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#201;</td>
+				<td>&amp;#201;</td>
+				<td>&amp;Eacute;</td>
+				<td>Capital E, acute accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#202;</td>
+				<td>&amp;#202;</td>
+				<td>&amp;Ecirc;</td>
+				<td>Capital E, circumflex accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#203;</td>
+				<td>&amp;#203;</td>
+				<td>&amp;Euml;</td>
+				<td>Capital E, dieresis or umlaut mark</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#204;</td>
+				<td>&amp;#204;</td>
+				<td>&amp;Igrave;</td>
+				<td>Capital I, grave accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#205;</td>
+				<td>&amp;#205;</td>
+				<td>&amp;Iacute;</td>
+				<td>Capital I, acute accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#206;</td>
+				<td>&amp;#206;</td>
+				<td>&amp;Icirc;</td>
+				<td>Capital I, circumflex accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#207;</td>
+				<td>&amp;#207;</td>
+				<td>&amp;Iuml;</td>
+				<td>Capital I, dieresis or umlaut mark</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#208;</td>
+				<td>&amp;#208;</td>
+				<td>&amp;ETH;</td>
+				<td>Capital Eth, Icelandic</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#209;</td>
+				<td>&amp;#209;</td>
+				<td>&amp;Ntilde;</td>
+				<td>Capital N, tilde</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#210;</td>
+				<td>&amp;#210;</td>
+				<td>&amp;Ograve;</td>
+				<td>Capital O, grave accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#211;</td>
+				<td>&amp;#211;</td>
+				<td>&amp;Oacute;</td>
+				<td>Capital O, acute accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#212;</td>
+				<td>&amp;#212;</td>
+				<td>&amp;Ocirc;</td>
+				<td>Capital O, circumflex accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#213;</td>
+				<td>&amp;#213;</td>
+				<td>&amp;Otilde;</td>
+				<td>Capital O, tilde</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#214;</td>
+				<td>&amp;#214;</td>
+				<td>&amp;Ouml;</td>
+				<td>Capital O, dieresis or umlaut mark</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#215;</td>
+				<td>&amp;#215;</td>
+				<td>&amp;times;</td>
+				<td>Multiply sign</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#216;</td>
+				<td>&amp;#216;</td>
+				<td>&amp;Oslash;</td>
+				<td>Capital O, slash</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#217;</td>
+				<td>&amp;#217;</td>
+				<td>&amp;Ugrave;</td>
+				<td>Capital U, grave accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#218;</td>
+				<td>&amp;#218;</td>
+				<td>&amp;Uacute;</td>
+				<td>Capital U, acute accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#219;</td>
+				<td>&amp;#219;</td>
+				<td>&amp;Ucirc;</td>
+				<td>Capital U, circumflex accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#220;</td>
+				<td>&amp;#220;</td>
+				<td>&amp;Uuml;</td>
+				<td>Capital U, dieresis or umlaut mark</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#221;</td>
+				<td>&amp;#221;</td>
+				<td>&amp;yacute;</td>
+				<td>Capital Y, acute accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#222;</td>
+				<td>&amp;#222;</td>
+				<td>&amp;THORN;</td>
+				<td>Capital THORN, Icelandic</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#223;</td>
+				<td>&amp;#223;</td>
+				<td>&amp;szlig;</td>
+				<td>Small sharp s, German (sz ligature)</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#224;</td>
+				<td>&amp;#224;</td>
+				<td>&amp;agrave;</td>
+				<td>Small a, grave accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#225;</td>
+				<td>&amp;#225;</td>
+				<td>&amp;aacute;</td>
+				<td>Small a, acute accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#226;</td>
+				<td>&amp;#226;</td>
+				<td>&amp;acirc;</td>
+				<td>Small a, circumflex accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#227;</td>
+				<td>&amp;#227;</td>
+				<td>&amp;atilde;</td>
+				<td>Small a, tilde</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#228;</td>
+				<td>&amp;#228;</td>
+				<td>&amp;aamul;</td>
+				<td>Small a, dieresis or umlaut mark</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#229;</td>
+				<td>&amp;#229;</td>
+				<td>&amp;aring
+					<td>Small a, ring</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#230;</td>
+				<td>&amp;#230;</td>
+				<td>&amp;aelig;</td>
+				<td>Small ae dipthong (ligature)</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#231;</td>
+				<td>&amp;#231;</td>
+				<td>&amp;ccedil;</td>
+				<td>Small c, cedilla</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#232;</td>
+				<td>&amp;#232;</td>
+				<td>&amp;egrave;</td>
+				<td>Small e, grave accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#233;</td>
+				<td>&amp;#233;</td>
+				<td>&amp;eacute;</td>
+				<td>Small e, acute accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#234;</td>
+				<td>&amp;#234;</td>
+				<td>&amp;ecirc;</td>
+				<td>Small e, circumflex accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#235;</td>
+				<td>&amp;#235;</td>
+				<td>&amp;euml;</td>
+				<td>Small e, dieresis or umlaut mark</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#236;</td>
+				<td>&amp;#236;</td>
+				<td>&amp;igrave;</td>
+				<td>Small i, grave accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#237;</td>
+				<td>&amp;#237;</td>
+				<td>&amp;iacute;</td>
+				<td>Small i, acute accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#238;</td>
+				<td>&amp;#238;</td>
+				<td>&amp;icirc;</td>
+				<td>Small i, circumflex accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#239;</td>
+				<td>&amp;#239;</td>
+				<td>&amp;iuml;</td>
+				<td>Small i, dieresis or umlaut mark</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#240;</td>
+				<td>&amp;#240;</td>
+				<td>&amp;eth;</td>
+				<td>Small eth, Icelandic</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#241;</td>
+				<td>&amp;#241;</td>
+				<td>&amp;ntilde;</td>
+				<td>Small n, tilde</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#242;</td>
+				<td>&amp;#242;</td>
+				<td>&amp;ograve;</td>
+				<td>Small o, grave accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#243;</td>
+				<td>&amp;#243;</td>
+				<td>&amp;oacute;</td>
+				<td>Small o, acute accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#244;</td>
+				<td>&amp;#244;</td>
+				<td>&amp;ocirc;</td>
+				<td>Small o, circumflex accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#245;</td>
+				<td>&amp;#245;</td>
+				<td>&amp;otilde;</td>
+				<td>Small o, tilde</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#246;</td>
+				<td>&amp;#246;</td>
+				<td>&amp;ouml;</td>
+				<td>Small o, dieresis or umlaut mark</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#247;</td>
+				<td>&amp;#247;</td>
+				<td>&amp;divide;</td>
+				<td>Division sign</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#248;</td>
+				<td>&amp;#248;</td>
+				<td>&amp;oslash;</td>
+				<td>Small o, slash</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#249;</td>
+				<td>&amp;#249;</td>
+				<td>&amp;ugrave;</td>
+				<td>Small u, grave accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#250;</td>
+				<td>&amp;#250;</td>
+				<td>&amp;uacute;</td>
+				<td>Small u, acute accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#251;</td>
+				<td>&amp;#251;</td>
+				<td>&amp;ucirc;</td>
+				<td>Small u, circumflex accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#252;</td>
+				<td>&amp;#252;</td>
+				<td>&amp;uuml;</td>
+				<td>Small u, dieresis or umlaut mark</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#253;</td>
+				<td>&amp;#253;</td>
+				<td>&amp;yacute;</td>
+				<td>Small y, acute accent</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#254;</td>
+				<td>&amp;#254;</td>
+				<td>&amp;thorn;</td>
+				<td>Small thorn, Icelandic</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#255;</td>
+				<td>&amp;#255;</td>
+				<td>&amp;yuml;</td>
+				<td>Small y, dieresis or umlaut mark</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#732;</td>
+				<td>&amp;#732;</td>
+				<td>&amp;tilde;</td>
+				<td>Tilde</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#8211;</td>
+				<td>&amp;#8211;</td>
+				<td>&amp;ndash;</td>
+				<td>Endash</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#8212;</td>
+				<td>&amp;#8212;</td>
+				<td>&amp;mdash;</td>
+				<td>Emdash</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#8216;</td>
+				<td>&amp;#8216;</td>
+				<td>&amp;lsquo;</td>
+				<td>Left Single Quote</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#8217;</td>
+				<td>&amp;#8217;</td>
+				<td>&amp;rsquo;</td>
+				<td>Right Single Quote</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#8220;</td>
+				<td>&amp;#8220;</td>
+				<td>&amp;ldquo;</td>
+				<td>Left Double Quote</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#8221;</td>
+				<td>&amp;#8221;</td>
+				<td>&amp;rdquo;</td>
+				<td>Right Double Quote</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#8364;</td>
+				<td>&amp;#8364;</td>
+				<td>&amp;euro;</td>
+				<td>Euro</td>
+			</tr>
+			<tr>
+				<td class="referenceSideHead">&#8482;</td>
+				<td>&amp;#8482;</td>
+				<td>&amp;trade;</td>
+				<td>Trademark</td>
+			</tr>
+		</table>
+	</div>
+	<div>
+		<br>
+		<br>
+		<br> </div>
+	<!-- Bar at the bottom of the page -->
+	<div class="container">
+		<div class="nav navbar navbar-fixed-bottom">
+			<div class="navbar-brand">
+				<h4>Got any ideas?</h4> </div>
+			<div class="navbar-brand">
+				<h4>Send them to us!</h4> </div>
+			<div class="navbar-brand text-center "> <a class="btn btn-info">Go!</a> </div>
+			<div class="navbar-brand">
+				<h4>Or...make it yourself.</h4>
+			</div>
+		</div>
+	</div>
+</BODY>
+
+</HTML>

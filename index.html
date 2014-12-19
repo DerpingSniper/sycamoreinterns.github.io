@@ -1,0 +1,115 @@
+<!DOCTYPE HTML5>
+<HTML>
+
+<HEAD>
+	<TITLE>Sycamore Interns</TITLE>
+	<meta name=viewport content="width=device-width, initial-scale=1.0">
+	<script src=http://code.jquery.com/jquery-1.11.0.min.js></script>
+	<script src=http://code.jquery.com/jquery-migrate-1.2.1.min.js></script>
+	<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css>
+	<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css>
+	<script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js></script>
+	<script>
+		$(document).ready(function () {
+			// Creates a new variable for the date
+			var d = new Date();
+			// Gets the month.
+			var month = d.getMonth();
+			// Changes colors based on the season            
+			if (month >= 10 || month < 1) {
+				var stylesheet = "winter";
+			} else if (month >= 1 && month < 4) {
+				var stylesheet = "spring";
+			} else if (month >= 4 && month < 7) {
+				var stylesheet = "summer";
+			} else if (month >= 7 && month < 10) {
+				var stylesheet = "fall";
+			}
+			$('head').append('<link rel="stylesheet" type="text/css" href="styles/' + stylesheet + '.css">');
+		});
+	</script>
+	<style>
+		.header3 {
+			color: #000;
+		}
+		h4 {
+			color: #FFF;
+		}
+	</style>
+</HEAD>
+
+<BODY>
+	<!-- Navbar at the top of the screen. -->
+	<div class="navbar navbar-fixed-top">
+		<div class=container>
+			<a href=index.html class=navbar-brand><img src=pics/logo.png style="width: 51%; margin-top: -9px;">
+			</a>
+			<button class=navbar-toggle data-toggle=collapse data-target=.navHeaderCollapse> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button>
+			<div class="collapse navbar-collapse navHeaderCollapse dropdown">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="index.html">Home</a>
+                        <li><a href="http://sycamore-interns.forumotion.com/">Forum</a></li>
+						<li class="dropdown"> <a href=# class=dropdown-toggle data-toggle=dropdown>Quick Guides <b class=caret></b></a>
+							<ul class=dropdown-menu>
+								<li><a href=guides/htmlGuide.html>HTML</a>
+								</li>
+								<li><a href=guides/jsGuide.html>JavaScript</a>
+								</li>
+								<li><a href=guides/cssGuide.html>CSS</a>
+								</li>
+							</ul>
+						</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="jumbotron text-center bg">
+			<h1>Hello, Interns.</h1>
+			<p>You're safe now. You are sheltered from the massive swirling storm of code that sits right at your fingertips. You're learning how to control it. Channel it. Bend it to your will. Welcome to the life of a programmer.</p>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 text-center">
+				<div class="padding bg">
+					<h3><a href=# class="header3">HTML Quick Guide</a></h3>
+					<p>Forgot how to use that one tag? Click on the button the see the cheetsheet! Or, if you wanna do it the hard way, it's under Quick Guides in the navbar too!</p>
+					<br>
+					<br> <a href="guides/htmlGuide.html" class="btn btn-primary a">HTML</a> </div>
+			</div>
+			<div class="col-md-3 text-center">
+				<div class="padding bg">
+					<h3><a href=# class="header3">Javascript Quick Guide</a></h3>
+					<p>The syntax are pretty hard to remember sometimes. This quick guide will help you figure it out! Or, if you wanna do it the hard way, it's under Quick Guides in the navbar too!</p>
+					<br> <a href="guides/jsGuide.html" class="btn btn-primary a">JavaScript</a> </div>
+			</div>
+			<div class="col-md-3 text-center">
+				<div class="padding bg">
+					<h3><a href=# class="header3">CSS Quick Guide</a></h3>
+					<p>Need to make your page look good? Don't remember what you need to put in the stylesheet to make it look that good? Click here to find out! Or, if you wanna do it the hard way, it's under Quick Guides in the navbar too!</p> <a href="guides/cssGuide.html" class="btn btn-primary a">CSS</a> </div>
+			</div>
+			<div class="col-md-3 text-center">
+				<div class="padding bg">
+					<h3><a href=# class="header3">Have a question?</a></h3>
+					<p>Ask us on our forums! There probably aren't very many interns yet, but (almost) everyone working at Sycamore would be glad to share their knowledge with you!</p>
+					<br>
+					<br> <a href="http://sycamore-interns.forumotion.com/" class="btn btn-primary a">Forum</a> </div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="nav navbar navbar-fixed-bottom">
+			<div class="navbar-brand">
+				<h4>Got any ideas?</h4> </div>
+			<div class="navbar-brand">
+				<h4>Send them to us!</h4> </div>
+			<div class="navbar-brand text-center "> <a href="http://sycamore-interns.forumotion.com/" class="btn btn-info">Go!</a> </div>
+			<div class="navbar-brand">
+				<h4>Or...make it yourself.</h4>
+			</div>
+		</div>
+	</div>
+</BODY>
+
+</HTML>
